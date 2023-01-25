@@ -59,9 +59,15 @@ Antes de pasar al analisis de correlaciones, decidimos eliminar algunas columnas
 ### Análisis de correlaciones
 Comenzamos analizando si las coordenadas de los inmuebles podrían tener alguna correlación con el precio, y vimos que en la latitud la correlaciñon era practicamente nula, pero que en el caso de la longitud, existia cierta correlación. Atribuimos esto a que en Estados Unidos la mayor parte de la población reside sobre las costas del Pacífico y del Atlántico, por lo que las propiedades cercanas a las mismas, deberían tener mayor demanda y por ende, mayor. Pero por otro lado, no existe tal diferencia en cuanto al norte o sur del país. Por lo tanto, decidimos eliminar la columan de Latitud.
 
-
-
 Procedimos luego a graficar las correlaciones de todas las features que aun permanecian en el dataframe, con la clase objetivo. De acuerdo al gráfico, determinamos que comenzariamos utlizando Bedrooms, Baths, Parking Options, Laundry Options, Square Feet, Publicaciones, Longitud y Permitido Fumar.
+
+### Primer modelo
+Para este tipo de problema de clasificación, consideramos que el modelo que mejor se adapta es el de [Arbol de Decisión](https://www.ibm.com/es-es/topics/decision-trees).
+Entrenamos un primer modelo haciendo validación cruzada y probando profundidades de 1 a 50. Graficamos los resultados y procedimos a entrenar un modelo con profundidad 27 niveles, dividiendo el set de datos en 80% para entrenamiento, 20% para testeo. Con este modelo obtuvimos un score de 0.87 para el set de testeo. Realizamos las predicciones sobre el set de Henry, enviamos los resultados y obtuvimos un Accuracy de 0.72, muy inferior a nuestra métrica.
+
+Pensando que el modelo podría haber caído en overfitting, entrenamos un nuevo modelo con 12 niveles de profundidad. En este modelo el Accuracy sobre el set de testeo bajó a 0.82, pero el Accuracy sobre el set de entrenamiento bajó a 0.85 (desde 0.99), por lo que decimos volver a intentar, pensando que habiamos resuelto el overfittin. Enviamos las predicciones a Henry y nos devolvió un Accuracy de 0.74, mejorando el resultado anterior a pesar de que la métrica en nuestro cálculo habia empeorado.
+
+
 
 
 
