@@ -119,8 +119,11 @@ Generamos el archivo para enviar a Henry y esta primera prueba nos devuelve un v
 
 Hicimos posteriormente dos pruebas mas escalando los datos, con [StandardScaler y MinMaxScaler](https://michael-fuchs-python.netlify.app/2020/05/19/k-means-clustering/), obteniendo en ambos casos peores resultados.
 
+## Código y Archivos
+Pueden encontrar en mi repositorio de Github el [Notebook con el EDA y los modelos supervisados](https://github.com/adelgerbo/Proyecto-Individual-Henry-II/blob/main/EDA%20y%20entrenamiento%20supervisado.ipynb), el [Notebook con los modelos no supervisados](https://github.com/adelgerbo/Proyecto-Individual-Henry-II/blob/main/No%20Supervisado.ipynb) y la [Carpeta que contiene los archivos csv con las predicciones enviadas a Henry](https://github.com/adelgerbo/Proyecto-Individual-Henry-II/tree/main/Predicciones%20enviadas)
 
-### **Datos sobre el autor**
+
+## **Datos sobre el autor**
 
 **Alejandro del Gerbo Actis**
 
