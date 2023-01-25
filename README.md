@@ -4,7 +4,7 @@
     Alejandro del Gerbo Actis</h2>
 
 
-### **Temática**
+## **Temática**
 
 El proyecto propuesto puede verse en su totalidad en el [siguiente link](https://github.com/adelgerbo/Proyecto-Individual-Henry-II/blob/main/CONSIGNAS.md).
 
@@ -14,5 +14,18 @@ Debiamos comenzar haciendo un Analisis Exploratorio de los Datos [(EDA)](https:/
 
 Por otro lado, se requería desarrollar un modelo de Machine Learning No Supervisado, que dividiera el dataset de testeo en 3 categorías.
 
-En ambos modelos, se generarían archivos en formato csv con las predicciones, los cuales luego se enviarían a Henry para que se los valorara en cuanto a la Exactitud [(Accuracy)](https://developers.google.com/machine-learning/crash-course/classification/accuracy?hl=es-419) del Modelo Supervisado
+En ambos modelos, se generarían archivos en formato csv con las predicciones, los cuales luego se enviarían a Henry para que se los valorara en cuanto a la Exactitud [(Accuracy)](https://developers.google.com/machine-learning/crash-course/classification/accuracy?hl=es-419) del Modelo Supervisado y por la métrica de [Silhouette](https://towardsdatascience.com/silhouette-coefficient-validating-clustering-techniques-e976bb81d10c) para el caso del Modelo No Supervisado.
+
+
+
+## **Tareas Realizadas**
+
+### Librerias utilizadas
+* Pandas y Numpy para la exploración, transformación y manipulación de los datos
+* Seaborn y Matplotlib para las visualizaciones
+* Category Encoders para el encoding de variables categóricas
+* Sklearn para utilizar sus modelos de Machine Learnin, escalado de datos, validación cruzada, división del set en entrenamiento y testeo y métricas para evaluar los modelos
+
+
+
 
