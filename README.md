@@ -46,7 +46,11 @@ Utilizamos el método del Rango Intercuartílico para fijar los lìmites desde l
 Los modelos de Machine Learning que usaríamos aceptan únicamente valores numéricos dentro de las features con las cuales se los entrena, por lo que debíamos analizar las variables categóricas exitentes para efectuar transformaciones con ellas:
 * "Laundry Options" (Servicio de Lavanderia): En primer lugar, detectamos 33.294 valores nulos, y presumiendo que de no existir un dato allí correpondería a que no contaban con el servicio, los reemplazamos por "No laundry on site". Luego asignamos valores del 0 al 4 para las distintos conceptos, ordenando de menor a mayor y comenzando desde las que no tienen lavandería en el lugar hasta las que contaban con lavadora y secadora dentro del inmueble.
 * "Parking Options" (Estacionamiento): En primer lugar, detectamos 55.694 valores nulos, y presumiendo que de no existir un dato allí correpondería a que no contaban con estacionamiento, los reemplazamos por "no parking". Luego asignamos valores del 0 al 4 para las distintos conceptos, ordenando de menor a mayor, comenzando desde las que no tienen estacionamiento o se estaciona en la calle, y terminando con las que contaban con valet parking, agrupando aquellos conceptos de valuación similar (carport y detached garage por ejemplo).
-* 
+
+### Análisis de correlaciones
+Comenzamos analizando si las coordenadas de los inmuebles podrían tener alguna correlación con el precio, y vimos que en la latitud la correlaciñon era practicamente nula, pero que en el caso de la longitud, existia cierta correlación. Atribuimos esto a que en Estados Unidos la mayor parte de la población reside sobre las costas del Pacífico y del Atlántico, por lo que las propiedades cercanas a las mismas, deberían tener mayor demanda y por ende, mayor. Pero por otro lado, no existe tal diferencia en cuanto al norte o sur del país. Por lo tanto, decidimos eliminar la columan de Latitud.
+
+
 
 
 
