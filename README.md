@@ -21,7 +21,7 @@ En ambos modelos, se generarían archivos en formato csv con las predicciones, l
 * [Seaborn](https://seaborn.pydata.org/) y [Matplotlib](https://matplotlib.org/) para las visualizaciones
 * [Category Encoders](https://contrib.scikit-learn.org/category_encoders/) para el encoding de variables categóricas
 * [Sklearn](https://scikit-learn.org/stable/) para utilizar sus modelos de Machine Learning, escalado de datos, validación cruzada, división del set en entrenamiento y testeo y métricas para evaluar los modelos
-* 
+
 
 ## **Tareas Realizadas**
 
