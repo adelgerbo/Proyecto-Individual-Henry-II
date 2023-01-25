@@ -37,7 +37,10 @@ Notamos luego la existencia de ouliers en varias columnas.
 * "sqfeet"(pies cuadrados de la propiedad): Encontramos valores en cero y muy bajos, y valores que nos parecieron extraordinariamente altos. Debido a nuestra ignorancia en el mercado de Real Estate de EEUU, buscamos información online, dentro de lo cual accedimos a esta [página](https://www.ahs.com/home-matters/real-estate/the-2022-american-home-size-index/), gracias a la cual obtuvimos el dato de que el promedio de pies cuadrados de las viviendas en Estados Unidos se acerca a 2.000.
 Por lo tanto, consideramos los valores superiores a 50.000 como errores (especialmente tratandose de alquileres).
 Tambien consideraremos errores los valores de cero y muy bajos, ya que de acuerdo a este otro [artículo](https://www.nyrentownsell.com/blog/square-footage-guide-to-living-real-life-home-example/), 200 pies cuadrados es el mínimo requerido para que la vivienda sea habitable.
-
+Utilizamos el método del Rango Intercuartílico para fijar los lìmites desde los cuales considerariamos los outliers e hicimos algunas gráficas, pero no consideramos adecuados esos valores. Tomamos como valor mínimo 200 pies cuadrados y como máximo 10.000, ajustando los outliers a los mismos.
+* "publicaciones": En esta columna creada por nosotros encontramos propiedades con mas de 100 avisos repetidos en el dataset, por lo que determinamos que como máximo tomariamos la cantidad de 30. Ajustamos y graficamos.
+* "beds" y "baths": Graficamos ambas con y sin outliers, y decidimos ajustar los mismos a los valores mínimos y máximos de 1 y 8.
+* 
 
 
 
