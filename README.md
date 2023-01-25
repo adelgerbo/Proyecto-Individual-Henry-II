@@ -26,6 +26,8 @@ En ambos modelos, se generarían archivos en formato csv con las predicciones, l
 * [Category Encoders](https://contrib.scikit-learn.org/category_encoders/) para el encoding de variables categóricas
 * [Sklearn](https://scikit-learn.org/stable/) para utilizar sus modelos de Machine Learnin, escalado de datos, validación cruzada, división del set en entrenamiento y testeo y métricas para evaluar los modelos
 
+### EDA (Analisis exploratorio de datos)
+Luego de cumplir con la primera consigna que consistía en insertar una nueva columna con el número 1 en las propiedaes cuyo valor era inferior o igual a 999 dólares y con el número 0 para el resto, y eliminar la columna "price", revisamos la distribución de ambas clases en el conjunto de datos, y comprobamos que se encontraban balanceadas, por lo que no requerían tratamiento en ese aspecto.
 
 
 
