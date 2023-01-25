@@ -71,6 +71,10 @@ Decidimos probar eliminando alguna de las features. Considerando que tal vez el 
 
 ### Cuarto modelo
 En este punto, decidimos volver a evaluar las correlaciones a efectos de probar eliminando alguna feature adicional. Graficamos y decidimos dejar de utilizar las Publicaciones, el permiso para fumar, el tipo de vivienda y la cantidad de dormitorios, todas features con la menor correlacion entre las restantes.
+Volvimos a testear con profundidades de 1 a 30, entrenando luego un modelo de profundidad 11. El score mejoró sustancialmente, ascendiendo a 0.81.
+La devolución de Henry fue de un Accuracy de 0.82, ¡seguimos mejorando la perfomance del modelo!
+
+### Quinto modelo
 
 
 
