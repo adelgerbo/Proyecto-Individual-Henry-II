@@ -120,7 +120,11 @@ Generamos el archivo para enviar a Henry y esta primera prueba nos devuelve un v
 Hicimos posteriormente dos pruebas mas escalando los datos, con [StandardScaler y MinMaxScaler](https://michael-fuchs-python.netlify.app/2020/05/19/k-means-clustering/), obteniendo en ambos casos peores resultados.
 
 
+### **Datos sobre el autor**
 
+**Alejandro del Gerbo Actis**
+
+adelgerbo@gmail.com
 
 
 
