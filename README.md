@@ -33,6 +33,12 @@ Notamos luego que había en el dataset una gran cantidad de anuncios similares, 
 
 Utilizando la columna que contenía dicha URL, detectamos 178.233 anuncios repetidos que correspondian a las mismas propiedades, practicamente la mitad del dataset. Considerando que esta repetición afectaría negativamente nuestros modelos, por el hecho de que ciertas características tendrían mas peso en el análisis solo por el hecho de haberse publicado mas veces esas propiedades, decidimos eliminar esa columna, con una salvedad: Pensamos que podría servirnos el dato referente a cuantas veces apareció publicada cada propiedad (tal vez las propiedades de mayor valor tardan mas tiempo en alquilarse), por lo que generamos una nueva columna conteniendo esa información llamada "publicaciones".
 
+Notamos luego la existencia de ouliers en varias columnas.
+* "sqfeet"(pies cuadrados de la propiedad): Encontramos valores en cero y muy bajos, y valores que nos parecieron extraordinariamente altos. Debido a nuestra ignorancia en el mercado de Real Estate de EEUU, buscamos información online, dentro de lo cual accedimos a esta [página](https://www.ahs.com/home-matters/real-estate/the-2022-american-home-size-index/), gracias a la cual obtuvimos el dato de que el promedio de pies cuadrados de las viviendas en Estados Unidos se acerca a 2.000.
+
+Por lo tanto, podemos considerar los valores superiores a 50.000 como errores (especialmente tratandose de alquileres).
+Tambien consideraremos errores los valores de cero y muy bajos, ya que de acuerdo a este otro artículo (https://www.nyrentownsell.com/blog/square-footage-guide-to-living-real-life-home-example/) , 200 square feets es el mínimo para que la vivienda sea habitable
+Calcularemos los outliers a continuacion utilizando el método del Rango Intercuartílico
 
 
 
