@@ -21,10 +21,10 @@ En ambos modelos, se generarían archivos en formato csv con las predicciones, l
 ## **Tareas Realizadas**
 
 ### Librerias utilizadas
-* Pandas y Numpy para la exploración, transformación y manipulación de los datos
-* Seaborn y Matplotlib para las visualizaciones
-* Category Encoders para el encoding de variables categóricas
-* Sklearn para utilizar sus modelos de Machine Learnin, escalado de datos, validación cruzada, división del set en entrenamiento y testeo y métricas para evaluar los modelos
+* [Pandas](https://pandas.pydata.org/) y [Numpy](https://numpy.org/) para la exploración, transformación y manipulación de los datos
+* [Seaborn](https://seaborn.pydata.org/) y [Matplotlib](https://matplotlib.org/) para las visualizaciones
+* [Category Encoders](https://contrib.scikit-learn.org/category_encoders/) para el encoding de variables categóricas
+* [Sklearn](https://scikit-learn.org/stable/) para utilizar sus modelos de Machine Learnin, escalado de datos, validación cruzada, división del set en entrenamiento y testeo y métricas para evaluar los modelos
 
 
 
