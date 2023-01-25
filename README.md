@@ -16,15 +16,13 @@ Por otro lado, se requería desarrollar un modelo de Machine Learning No Supervi
 
 En ambos modelos, se generarían archivos en formato csv con las predicciones, los cuales luego se enviarían a Henry para que se los valorara en cuanto a la Exactitud [(Accuracy)](https://developers.google.com/machine-learning/crash-course/classification/accuracy?hl=es-419) del Modelo Supervisado y por la métrica de [Silhouette](https://towardsdatascience.com/silhouette-coefficient-validating-clustering-techniques-e976bb81d10c) para el caso del Modelo No Supervisado.
 
-
-
-## **Tareas Realizadas**
-
-### Librerias utilizadas
+## Librerias utilizadas
 * [Pandas](https://pandas.pydata.org/) y [Numpy](https://numpy.org/) para la exploración, transformación y manipulación de los datos
 * [Seaborn](https://seaborn.pydata.org/) y [Matplotlib](https://matplotlib.org/) para las visualizaciones
 * [Category Encoders](https://contrib.scikit-learn.org/category_encoders/) para el encoding de variables categóricas
 * [Sklearn](https://scikit-learn.org/stable/) para utilizar sus modelos de Machine Learnin, escalado de datos, validación cruzada, división del set en entrenamiento y testeo y métricas para evaluar los modelos
+
+## **Tareas Realizadas**
 
 ### EDA (Analisis exploratorio de datos)
 Luego de cumplir con la primera consigna que consistía en insertar una nueva columna con el número 1 en las propiedaes cuyo valor era inferior o igual a 999 dólares y con el número 0 para el resto, y eliminar la columna "price", revisamos la distribución de ambas clases en el conjunto de datos, y comprobamos que se encontraban balanceadas, por lo que no requerían tratamiento en ese aspecto.
@@ -65,7 +63,19 @@ Procedimos luego a graficar las correlaciones de todas las features que aun perm
 Para este tipo de problema de clasificación, consideramos que el modelo que mejor se adapta es el de [Arbol de Decisión](https://www.ibm.com/es-es/topics/decision-trees).
 Entrenamos un primer modelo haciendo validación cruzada y probando profundidades de 1 a 50. Graficamos los resultados y procedimos a entrenar un modelo con profundidad 27 niveles, dividiendo el set de datos en 80% para entrenamiento, 20% para testeo. Con este modelo obtuvimos un score de 0.87 para el set de testeo. Realizamos las predicciones sobre el set de Henry, enviamos los resultados y obtuvimos un Accuracy de 0.72, muy inferior a nuestra métrica.
 
+### Segundo modelo
 Pensando que el modelo podría haber caído en overfitting, entrenamos un nuevo modelo con 12 niveles de profundidad. En este modelo el Accuracy sobre el set de testeo bajó a 0.82, pero el Accuracy sobre el set de entrenamiento bajó a 0.85 (desde 0.99), por lo que decimos volver a intentar, pensando que habiamos resuelto el overfittin. Enviamos las predicciones a Henry y nos devolvió un Accuracy de 0.74, mejorando el resultado anterior a pesar de que la métrica en nuestro cálculo habia empeorado.
+
+### Tercer modelo
+Decidimos probar eliminando alguna de las features. Considerando que tal vez el binary encoding sobre los Estados no estuviera aportando información valiosa al modelo, entrenamos un nuevo modelo sin estos datos. Probamos con profundidades de 1 a 30, y luego de graficar, decidimos entrenar un modelo con profundidad de 9. Nuevamente , volvieron a bajar los valores de Accuracy obtenidos (0.80 en el training, 0.79 en el test). De todos modos, efectuamos las predicciones y enviamos el modelo a Henry, y sorpresivamente obtuvimos un Accuracy de 0.79, nuestro mejor score hasta el momento.
+
+### Cuarto modelo
+En este punto, decidimos volver a evaluar las correlaciones a efectos de probar eliminando alguna feature adicional. Graficamos y decidimos dejar de utilizar las Publicaciones, el permiso para fumar, el tipo de vivienda y la cantidad de dormitorios, todas features con la menor correlacion entre las restantes.
+
+
+
+
+
 
 
 
