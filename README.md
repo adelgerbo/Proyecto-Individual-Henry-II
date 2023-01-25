@@ -41,6 +41,11 @@ Utilizamos el método del Rango Intercuartílico para fijar los lìmites desde l
 * "publicaciones": En esta columna creada por nosotros encontramos propiedades con mas de 100 avisos repetidos en el dataset, por lo que determinamos que como máximo tomariamos la cantidad de 30. Ajustamos y graficamos.
 * "beds" y "baths": Graficamos ambas con y sin outliers, y decidimos ajustar los mismos a los valores mínimos y máximos de 1 y 8.
 * "long"(lonmgitud, coordenada): Encontramos valores en positivo que no correspondian a Estados Unidos, pero verificamos con Google Maps que invirtiendo el signo, dichos puntos se ubicaban en California. Transformamos entonces los valores positivos en negativos. Luego verificamos cuales eran los límites de longitud del territorio del país, y ajustamos los registros que se excedian a esos valores. Por último, detectamos 918 valores nulos, los cuales decidimos reemplazar por el valor promedio.
+
+### Variables Categóricas
+Los modelos de Machine Learning que usaríamos aceptan únicamente valores numéricos dentro de las features con las cuales se los entrena, por lo que debíamos analizar las variables categóricas exitentes para efectuar transformaciones con ellas:
+* "Laundry Options" (Servicio de Lavanderia): En primer lugar, detectamos 33.294 valores nulos, y presumiendo que de no existir un dato allí correpondería a que no contaban con el servicio, los reemplazamos por "No laundry on site". Luego asignamos valores del 0 al 4 para las distintos conceptos, ordenando de menor a mayor y comenzando desde las que no tienen lavandería en el lugar hasta las que contaban con lavadora y secadora dentro del inmueble.
+* "Parking Options" (Estacionamiento): En primer lugar, detectamos 55.694 valores nulos, y presumiendo que de no existir un dato allí correpondería a que no contaban con estacionamiento, los reemplazamos por "no parking". Luego asignamos valores del 0 al 4 para las distintos conceptos, ordenando de menor a mayor, comenzando desde las que no tienen estacionamiento o se estaciona en la calle, y terminando con las que contaban con valet parking, agrupando aquellos conceptos de valuación similar (carport y detached garage por ejemplo).
 * 
 
 
