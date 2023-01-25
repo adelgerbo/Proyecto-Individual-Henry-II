@@ -75,6 +75,21 @@ Volvimos a testear con profundidades de 1 a 30, entrenando luego un modelo de pr
 La devolución de Henry fue de un Accuracy de 0.82, ¡seguimos mejorando la perfomance del modelo!
 
 ### Quinto modelo
+En este momento, decidimos enfocarnos en analizar si había algun hiperparámetro que pudieramos mejorar. Incorporamos nuevos hiperparámetros al modelo y obtuvimos un Índice [AUC](https://www.analyticsvidhya.com/blog/2020/06/auc-roc-curve-machine-learning/) de 0.851
+
+Hicimos pruebas con profundidades de 1 a 32, min_samples_split de 0.1 a 1, min_samples_leaf de 0.1 a 0.5, y limitando la cantidad de features a utilizar por el árbol en cada decisión.
+Combinando los resultados mejoramos levemente el indice a 0.854.
+
+Entrenamos un modelo con los nuevos hiperparámetros incorporados y obtuvimos una precisiòn de 0.85 en el testeo.
+Enviamos a Henry, obteniendo un Accuracy de 0.89. ¡Ya rozábamos el 90%!
+
+##Sexto modelo
+En este caso, tomamos la decisión de entrenar el modelo con todos los datos, sin separar en set de entrenamiento y de testeo, y chequear si de esta forma el modelo tenia una mejor perfomance con el set de datos de Henry.
+Luego de enviar las predicciones, ¡¡obtuvimos un Accuracy de 0.90!!
+
+##Séptimo modelo
+Para el último modelo, descartamos la columna "Beds", ya que tenía alta correlación con "Sqfeet" y "Baths" (más grande la vivienda, mas baños y mas dormitorios). Obtenemos 0.86 en el set de testeo (dejamos solo el 1% del dataset para testeo de acuerdo a lo deducido con el modelo anterior), enviamos a Henry y obtenemos un Accuracy de 0.91.
+
 
 
 
