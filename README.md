@@ -20,7 +20,8 @@ En ambos modelos, se generarían archivos en formato csv con las predicciones, l
 * [Pandas](https://pandas.pydata.org/) y [Numpy](https://numpy.org/) para la exploración, transformación y manipulación de los datos
 * [Seaborn](https://seaborn.pydata.org/) y [Matplotlib](https://matplotlib.org/) para las visualizaciones
 * [Category Encoders](https://contrib.scikit-learn.org/category_encoders/) para el encoding de variables categóricas
-* [Sklearn](https://scikit-learn.org/stable/) para utilizar sus modelos de Machine Learnin, escalado de datos, validación cruzada, división del set en entrenamiento y testeo y métricas para evaluar los modelos
+* [Sklearn](https://scikit-learn.org/stable/) para utilizar sus modelos de Machine Learning, escalado de datos, validación cruzada, división del set en entrenamiento y testeo y métricas para evaluar los modelos
+* 
 
 ## **Tareas Realizadas**
 
@@ -109,7 +110,10 @@ Entrega 6 --- Accuracy 0.9028 --- Recall 0.8935
 
 Entrega 7 --- Accuracy 0.9096 --- Recall 0.9034
 
+## Modelo de Aprendizaje No Supervisado
+Para el mismo utilizamos [KMeans](https://www.aprendemachinelearning.com/k-means-en-python-paso-a-paso/), ya que la consigna consistía en ingestar al modelo todos los datos del set de testeo, sin etiquetar, y que éste los clasifique en tres grupos (clusters).
 
+Exportamos los datos ya transformados utilizados para el modelo supervisado, entrenamos el modelo KMeans solicitandole que clasifique en 3 clusters, 
 
 
 
