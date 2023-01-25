@@ -50,6 +50,14 @@ Los modelos de Machine Learning que usaríamos aceptan únicamente valores numé
 ### Análisis de correlaciones
 Comenzamos analizando si las coordenadas de los inmuebles podrían tener alguna correlación con el precio, y vimos que en la latitud la correlaciñon era practicamente nula, pero que en el caso de la longitud, existia cierta correlación. Atribuimos esto a que en Estados Unidos la mayor parte de la población reside sobre las costas del Pacífico y del Atlántico, por lo que las propiedades cercanas a las mismas, deberían tener mayor demanda y por ende, mayor. Pero por otro lado, no existe tal diferencia en cuanto al norte o sur del país. Por lo tanto, decidimos eliminar la columan de Latitud.
 
+Antes de continuar con el analisis de correlaciones, decidimos eliminar algunas columnas mas:
+* El ID y la URL del anuncio no aportan ningún dato de interes
+* Existian en el dataset mas de 400 regiones, pero al contar con el Estado, desechamos el dato de Región y Region URL
+* La URL con la imagen del inmueble es un dato que se podría utilizar mediante software de reconociento de imagenes, pero consideramos que no contabamos con el tiempo suficiente para poder cumplir con la deadline, por lo que la eliminamos.
+* Con el mismo criterio eliminamos la descripción del inmueble, que requería la implementación de un modelo de procesamiento de lenguaje natural.
+
+Procedimos luego a graficar las correlaciones de todas las features que aun permanecian en el dataframe, con la clase objetivo.
+
 
 
 
