@@ -47,7 +47,7 @@ Los modelos de Machine Learning que usaríamos aceptan únicamente valores numé
 * Analizamos tambien el tipo de vivienda en búsqueda de correlación, graficamos y detectamos que algunos tipos de propiedades tenian mayor proporción de precios altos que otros. Pasamos entonces las variables categóricas asignandoles numeros del 0 al 5, agrupando en este paso tambien algunas categorías de similar valoración (duplex y loft por ejemplo).
 * Con respecto al Estado, vimos en esta [publicación](https://www.fool.com/the-ascent/research/average-house-price-state/#:~:text=The%20median%20home%20price%20in,in%20the%20U.S.%20at%20%24354%2C649.) que el Estado en el cual se ubican las propiedades tiene gran influencia sobre el precio promedio de las mismas. Por lo tanto, decidimos utilizar la columna "state" en el modelos, pero necesitabamos transformarla en valores numéricos. Hicimos esto mediante el método de [Binary Encoding](https://www.analyticsvidhya.com/blog/2020/08/types-of-categorical-data-encoding/), ya que el [One-Hot Encoding](https://www.analyticsvidhya.com/blog/2021/05/how-to-perform-one-hot-encoding-for-multi-categorical-variables/) nos crearía demasiadas nuevas columnas.
 
-## Eliminación de columnas
+### Eliminación de columnas
 Antes de pasar al analisis de correlaciones, decidimos eliminar algunas columnas:
 * El ID y la URL del anuncio no aportan ningún dato de interes
 * Existian en el dataset mas de 400 regiones, pero al contar con el Estado, desechamos el dato de Región y Region URL
@@ -83,12 +83,32 @@ Combinando los resultados mejoramos levemente el indice a 0.854.
 Entrenamos un modelo con los nuevos hiperparámetros incorporados y obtuvimos una precisiòn de 0.85 en el testeo.
 Enviamos a Henry, obteniendo un Accuracy de 0.89. ¡Ya rozábamos el 90%!
 
-##Sexto modelo
+### Sexto modelo
 En este caso, tomamos la decisión de entrenar el modelo con todos los datos, sin separar en set de entrenamiento y de testeo, y chequear si de esta forma el modelo tenia una mejor perfomance con el set de datos de Henry.
 Luego de enviar las predicciones, ¡¡obtuvimos un Accuracy de 0.90!!
 
-##Séptimo modelo
+### Séptimo modelo
 Para el último modelo, descartamos la columna "Beds", ya que tenía alta correlación con "Sqfeet" y "Baths" (más grande la vivienda, mas baños y mas dormitorios). Obtenemos 0.86 en el set de testeo (dejamos solo el 1% del dataset para testeo de acuerdo a lo deducido con el modelo anterior), enviamos a Henry y obtenemos un Accuracy de 0.91.
+
+## Resumen Modelo Supervisado
+Hemos realizado 7 modelos con sus respectivas entregas, y en cada una de ellas hemos ido mejorando la perfomance. Habiendo superado el 90% de Accuracy, entendemos que es un modelo con un buen desempeño.
+
+Resumimos aquí los scores obtenidos:
+
+Entrega 1 --- Accuracy 0.7169 --- Recall 0.6784
+
+Entrega 2 --- Accuracy 0.7408 --- Recall 0.7031
+
+Entrega 3 --- Accuracy 0.7924 --- Recall 0.7818
+
+Entrega 4 --- Accuracy 0.8184 --- Recall 0.7942
+
+Entrega 5 --- Accuracy 0.8879 --- Recall 0.8829
+
+Entrega 6 --- Accuracy 0.9028 --- Recall 0.8935
+
+Entrega 7 --- Accuracy 0.9096 --- Recall 0.9034
+
 
 
 
