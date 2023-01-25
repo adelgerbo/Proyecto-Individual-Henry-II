@@ -113,7 +113,11 @@ Entrega 7 --- Accuracy 0.9096 --- Recall 0.9034
 ## Modelo de Aprendizaje No Supervisado
 Para el mismo utilizamos [KMeans](https://www.aprendemachinelearning.com/k-means-en-python-paso-a-paso/), ya que la consigna consistía en ingestar al modelo todos los datos del set de testeo, sin etiquetar, y que éste los clasifique en tres grupos (clusters).
 
-Exportamos los datos ya transformados utilizados para el modelo supervisado, entrenamos el modelo KMeans solicitandole que clasifique en 3 clusters, 
+Exportamos los datos ya transformados utilizados para el modelo supervisado, entrenamos el modelo KMeans solicitandole que clasifique en 3 clusters, le pedimos luego que nos devuelva las predicciones sobre el set de testeo de Henry y nos devuelva para cada fila un 0, 1 o 2, correspondiente a cada cluster.
+
+Generamos el archivo para enviar a Henry y esta primera prueba nos devuelve un valor de Silhouette de 0.55. Si consideramos que esta métrica devuelve valores entre -1 y 1, y que 0.60 se considera un modelo performante, creemos que es un buen resultado. Debemos tener en cuenta además que desconocemos que transformaciones ha efectuado Henry sobre el dataset que nos ha enviado, por lo que al no contar con los mismos datos, es esperable que se obtenga una medición mas baja.
+
+Hicimos posteriormente dos pruebas mas escalando los datos, con [StandardScaler y MinMaxScaler](https://michael-fuchs-python.netlify.app/2020/05/19/k-means-clustering/), obteniendo en ambos casos peores resultados.
 
 
 
