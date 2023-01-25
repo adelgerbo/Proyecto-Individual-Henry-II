@@ -40,6 +40,7 @@ Tambien consideraremos errores los valores de cero y muy bajos, ya que de acuerd
 Utilizamos el método del Rango Intercuartílico para fijar los lìmites desde los cuales considerariamos los outliers e hicimos algunas gráficas, pero no consideramos adecuados esos valores. Tomamos como valor mínimo 200 pies cuadrados y como máximo 10.000, ajustando los outliers a los mismos.
 * "publicaciones": En esta columna creada por nosotros encontramos propiedades con mas de 100 avisos repetidos en el dataset, por lo que determinamos que como máximo tomariamos la cantidad de 30. Ajustamos y graficamos.
 * "beds" y "baths": Graficamos ambas con y sin outliers, y decidimos ajustar los mismos a los valores mínimos y máximos de 1 y 8.
+* "long"(lonmgitud, coordenada): Encontramos valores en positivo que no correspondian a Estados Unidos, pero verificamos con Google Maps que invirtiendo el signo, dichos puntos se ubicaban en California. Transformamos entonces los valores positivos en negativos. Luego verificamos cuales eran los límites de longitud del territorio del país, y ajustamos los registros que se excedian a esos valores. Por último, detectamos 918 valores nulos, los cuales decidimos reemplazar por el valor promedio.
 * 
 
 
