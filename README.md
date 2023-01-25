@@ -46,6 +46,10 @@ Utilizamos el método del Rango Intercuartílico para fijar los lìmites desde l
 Los modelos de Machine Learning que usaríamos aceptan únicamente valores numéricos dentro de las features con las cuales se los entrena, por lo que debíamos analizar las variables categóricas exitentes para efectuar transformaciones con ellas:
 * "Laundry Options" (Servicio de Lavanderia): En primer lugar, detectamos 33.294 valores nulos, y presumiendo que de no existir un dato allí correpondería a que no contaban con el servicio, los reemplazamos por "No laundry on site". Luego asignamos valores del 0 al 4 para las distintos conceptos, ordenando de menor a mayor y comenzando desde las que no tienen lavandería en el lugar hasta las que contaban con lavadora y secadora dentro del inmueble.
 * "Parking Options" (Estacionamiento): En primer lugar, detectamos 55.694 valores nulos, y presumiendo que de no existir un dato allí correpondería a que no contaban con estacionamiento, los reemplazamos por "no parking". Luego asignamos valores del 0 al 4 para las distintos conceptos, ordenando de menor a mayor, comenzando desde las que no tienen estacionamiento o se estaciona en la calle, y terminando con las que contaban con valet parking, agrupando aquellos conceptos de valuación similar (carport y detached garage por ejemplo).
+* Analizamos tambien el tipo de vivienda en búsqueda de correlación, graficamos y detectamos que algunos tipos de propiedades tenian mayor proporción de precios altos que otros. Pasamos entonces las variables categóricas asignandoles numeros del 0 al 5, agrupando en este paso tambien algunas categorías de similar valoración (duplex y loft por ejemplo).
+* Con respecto al Estado, vimos en esta [publicación](https://www.fool.com/the-ascent/research/average-house-price-state/#:~:text=The%20median%20home%20price%20in,in%20the%20U.S.%20at%20%24354%2C649.) queel Estado en el cual se ubican las propiedades tiene gran influencia sobre el precio promedio de las mismas.
+Por lo tanto, vamos a utilizar la columna "state", pero necesitamos transformarla en valores numéricos.
+Haremos esto mediante el método de Binary Encoding, ya que el One-Hot Encoding nos crearía demasiadas nuevas columnas
 
 ### Análisis de correlaciones
 Comenzamos analizando si las coordenadas de los inmuebles podrían tener alguna correlación con el precio, y vimos que en la latitud la correlaciñon era practicamente nula, pero que en el caso de la longitud, existia cierta correlación. Atribuimos esto a que en Estados Unidos la mayor parte de la población reside sobre las costas del Pacífico y del Atlántico, por lo que las propiedades cercanas a las mismas, deberían tener mayor demanda y por ende, mayor. Pero por otro lado, no existe tal diferencia en cuanto al norte o sur del país. Por lo tanto, decidimos eliminar la columan de Latitud.
@@ -54,9 +58,13 @@ Antes de continuar con el analisis de correlaciones, decidimos eliminar algunas 
 * El ID y la URL del anuncio no aportan ningún dato de interes
 * Existian en el dataset mas de 400 regiones, pero al contar con el Estado, desechamos el dato de Región y Region URL
 * La URL con la imagen del inmueble es un dato que se podría utilizar mediante software de reconociento de imagenes, pero consideramos que no contabamos con el tiempo suficiente para poder cumplir con la deadline, por lo que la eliminamos.
-* Con el mismo criterio eliminamos la descripción del inmueble, que requería la implementación de un modelo de procesamiento de lenguaje natural.
+* Con el mismo criterio eliminamos la descripción del inmueble, que requería la implementación de un modelo de [procesamiento de lenguaje natural](https://www.aprendemachinelearning.com/procesamiento-del-lenguaje-natural-nlp/).
 
-Procedimos luego a graficar las correlaciones de todas las features que aun permanecian en el dataframe, con la clase objetivo.
+Procedimos luego a graficar las correlaciones de todas las features que aun permanecian en el dataframe, con la clase objetivo. De acuerdo al gráfico, determinamos que comenzariamos utlizando Bedrooms, Baths, Parking Options, Laundry Options, Square Feet, Publicaciones, Longitud y Permitido Fumar.
+
+
+
+
 
 
 
